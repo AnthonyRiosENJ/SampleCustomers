@@ -1,0 +1,10 @@
+﻿{
+  "Info": {
+    "Class": "clsDbProjProperty",
+    "Description": "Project Properties (Access)"
+  },
+  "Items": {
+    "VCS Build Path": "Y:\\Data Processing\\Sample Forms",
+    "VCS Source Path": "\\source"
+  }
+}

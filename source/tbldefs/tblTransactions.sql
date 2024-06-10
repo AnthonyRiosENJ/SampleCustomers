@@ -1,0 +1,7 @@
+﻿CREATE TABLE [tblTransactions] (
+  [ID] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL,
+  [CustomerID] LONG,
+  [Subtotal] CURRENCY,
+  [Tax] CURRENCY,
+  [Total] CURRENCY
+)

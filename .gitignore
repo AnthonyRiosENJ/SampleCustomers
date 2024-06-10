@@ -1,0 +1,18 @@
+#Data base files
+*.mdb
+*.accdb
+*.laccdb
+*.accdr
+
+#Extra Files
+*.log
+*.zip
+*.tmp
+*.xlsx
+
+#Secure files not Exported
+source/tables/*.xml
+[Bb]ackup[s]*/*
+
+#Local only
+vcs-index.json
