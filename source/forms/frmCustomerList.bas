@@ -308,7 +308,7 @@ Begin Form
                     LayoutCachedHeight =1995
                     Begin
                         Begin Label
-                            OverlapFlags =85
+                            OverlapFlags =93
                             TextFontFamily =18
                             Left =120
                             Top =1695
@@ -435,7 +435,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
                     Left =1260
                     Top =2160
@@ -450,7 +450,7 @@ Begin Form
                     LayoutCachedHeight =2475
                     Begin
                         Begin Label
-                            OverlapFlags =93
+                            OverlapFlags =85
                             TextFontFamily =18
                             Left =240
                             Top =2160

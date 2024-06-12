@@ -22,16 +22,18 @@ End Sub
 
 Private Sub btnRandom_Click()
     Dim rstNames As Recordset
+    Dim rstStates As Recordset
 
     Set rstNames = CurrentDb.OpenRecordset("tblNames", dbOpenDynaset)
+    Set rstStates = CurrentDb.OpenRecordset("tblStates", dbOpenDynaset)
 
     txtName = GetRandomName(rstNames) & " " & GetRandomName(rstNames)
     txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
 
     'TODO Set these values randomly as well
     txtCity = "ELIZABETH"
-    txtState = "NJ"
-    txtZip = "07208"
+    txtState = GetRandomState(rstStates)
+    txtZip = GetRandomZip()
 
     txtEmail = Left(txtName, 4) & "@gmail.com"
     txtPhone = GetRandomPhone()
@@ -61,6 +63,21 @@ Private Function GetRandomName(rst As Recordset)
 
 End Function
 
+Private Function GetRandomState(rst As Recordset)
+    Dim rng As Integer
+    'Set random number
+    Randomize
+    'Rnd returns number from 0-1, I think
+    rng = Int(51 * Rnd)
+    Debug.Print rng
+
+    rst.MoveFirst
+    rst.Move rng
+
+    GetRandomState = rst!Field2
+
+End Function
+
 Private Function GetRandomPhone()
     Dim i As Integer
     Dim Phone As String
@@ -73,5 +90,20 @@ Private Function GetRandomPhone()
     Next i
 
     GetRandomPhone = Phone
+
+End Function
+
+Private Function GetRandomZip()
+    Dim i As Integer
+    Dim Phone As String
+
+    Zip = ""
+
+    For i = 0 To 4
+        Randomize
+        Zip = Zip & Int(10 * Rnd)
+    Next i
+
+    GetRandomZip = Zip
 
 End Function
