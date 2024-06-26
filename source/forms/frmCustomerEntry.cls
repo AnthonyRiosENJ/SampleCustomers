@@ -4,19 +4,55 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Dim stateFull As String
+
 Private Sub btnClose_Click()
     DoCmd.Close
 End Sub
 
+Private Sub btnGen10_Click()
+    Dim i As Integer
+    For i = 1 To 10
+        'Adds a New Row
+        Dim rst As Recordset
+        Set rst = Me.Recordset
+        rst.AddNew
+
+        'Generates a Random Customer
+        Dim rstNames As Recordset
+        Dim rstStates As Recordset
+
+        Set rstNames = CurrentDb.OpenRecordset("tblNames", dbOpenDynaset)
+        Set rstStates = CurrentDb.OpenRecordset("tblStates", dbOpenDynaset)
+
+        txtName = GetRandomName(rstNames) & " " & GetRandomName(rstNames)
+        txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
+
+        'TODO Set these values randomly as well
+        txtState = GetRandomState(rstStates)
+        txtCity = GetRandomCity(stateFull)
+        txtZip = GetRandomZip()
+
+        txtEmail = Left(txtName, 4) & "@gmail.com"
+        txtPhone = GetRandomPhone()
+
+        'Saves the Cucstomer to the list
+        DoCmd.RunCommand acCmdSaveRecord
+    Next i
+
+End Sub
+
 Private Sub btnSave_Click()
-    DoCmd.Save
+    DoCmd.RunCommand acCmdSaveRecord
 End Sub
 
 Private Sub btnNew_Click()
     Dim rst As Recordset
 
-    Set rst = Me.Recordset
-    rst.AddNew
+    'Set rst = Me.Recordset
+    'rst.AddNew
+    DoCmd.RunCommand acCmdRecordsGoToNew
+
 
 End Sub
 
@@ -31,8 +67,8 @@ Private Sub btnRandom_Click()
     txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
 
     'TODO Set these values randomly as well
-    txtCity = "ELIZABETH"
     txtState = GetRandomState(rstStates)
+    txtCity = GetRandomCity(stateFull)
     txtZip = GetRandomZip()
 
     txtEmail = Left(txtName, 4) & "@gmail.com"
@@ -74,7 +110,8 @@ Private Function GetRandomState(rst As Recordset)
     rst.MoveFirst
     rst.Move rng
 
-    GetRandomState = rst!Field2
+    GetRandomState = rst!State
+    stateFull = rst!stateFull
 
 End Function
 
@@ -105,5 +142,34 @@ Private Function GetRandomZip()
     Next i
 
     GetRandomZip = Zip
+
+End Function
+
+Private Function GetRandomCity(State As String)
+    Dim cnt As Integer
+    Dim rstCities As Recordset
+
+    Set rstCities = CurrentDb.OpenRecordset("" & _
+    "SELECT DISTINCT City, State " & _
+    "FROM tblCensus " & _
+    "WHERE State='" & State & "' and City NOT LIKE 'Balance of*';" _
+    , dbOpenDynaset)
+
+    rstCities.MoveLast
+    DoEvents
+    rstCities.MoveFirst
+    cnt = rstCities.RecordCount
+
+    Dim rng As Integer
+    'Set random number
+    Randomize
+    'Rnd returns number from 0-1, I think
+    rng = Int(cnt * Rnd)
+    Debug.Print rng
+
+
+    rstCities.Move rng
+
+    GetRandomCity = rstCities!City
 
 End Function

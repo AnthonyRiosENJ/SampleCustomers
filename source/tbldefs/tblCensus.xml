@@ -3,12 +3,12 @@
   <xsd:element name="dataroot">
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="Sub-est2023" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+        <xsd:element ref="tblCensus" minOccurs="0" maxOccurs="unbounded"></xsd:element>
       </xsd:sequence>
       <xsd:attribute name="generated" type="xsd:dateTime"></xsd:attribute>
     </xsd:complexType>
   </xsd:element>
-  <xsd:element name="Sub-est2023">
+  <xsd:element name="tblCensus">
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="ID" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"></od:index>
@@ -176,7 +176,7 @@
             </xsd:restriction>
           </xsd:simpleType>
         </xsd:element>
-        <xsd:element name="Field9" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+        <xsd:element name="City" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"></od:fieldProperty>
@@ -200,7 +200,7 @@
             </xsd:restriction>
           </xsd:simpleType>
         </xsd:element>
-        <xsd:element name="Field10" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
+        <xsd:element name="State" minOccurs="0" od:jetType="text" od:sqlSType="nvarchar">
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnWidth" type="3" value="-1"></od:fieldProperty>

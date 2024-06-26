@@ -34,6 +34,20 @@ Private Sub btnView_Click()
 
 End Sub
 
+
+Private Sub txtFirstName_AfterUpdate()
+
+    If txtFirstName & "" = "" Then
+        lstMain.RowSource = "tblCustomers"
+    Else
+        lstMain.RowSource = "SELECT * " & _
+        "FROM tblCustomers " & _
+        "WHERE CustomerName='" & txtFirstName & "' " & _
+        "OR CustomerName LIKE '" & txtFirstName & "*' "
+
+    End If
+End Sub
+
 Private Sub txtZip_AfterUpdate()
 
     'Check if zip has a value

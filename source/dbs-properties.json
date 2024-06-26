@@ -73,7 +73,7 @@
       "Type": 3
     },
     "Name": {
-      "Value": "rel:SampleCustomers.accdb",
+      "Value": "rel:SampleCustomers2.accdb",
       "Type": 12
     },
     "NavPane Category": {
@@ -107,6 +107,10 @@
     "ProjVer": {
       "Value": 142,
       "Type": 3
+    },
+    "Property Sheet Label Width": {
+      "Value": 2325,
+      "Type": 4
     },
     "QueryTimeout": {
       "Value": 60,

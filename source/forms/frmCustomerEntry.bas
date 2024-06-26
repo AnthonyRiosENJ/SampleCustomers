@@ -11,11 +11,11 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
-    Width =7920
+    Width =8040
     DatasheetFontHeight =11
-    ItemSuffix =23
-    Right =6345
-    Bottom =12690
+    ItemSuffix =26
+    Right =15975
+    Bottom =11280
     RecSrcDt = Begin
         0xff3d29d95531e640
     End
@@ -345,8 +345,8 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =900
-                    Top =4500
+                    Left =120
+                    Top =4440
                     Height =1080
                     TabIndex =2
                     Name ="btnSave"
@@ -389,16 +389,16 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =900
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =2340
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =1560
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2700
-                    Top =4500
+                    Left =1740
+                    Top =4440
                     Height =1080
                     Name ="btnNew"
                     Caption ="Add New"
@@ -440,16 +440,16 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =2700
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =4140
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =1740
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =3180
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =4500
-                    Top =4500
+                    Left =3360
+                    Top =4440
                     Height =1080
                     TabIndex =9
                     Name ="btnRandom"
@@ -492,16 +492,16 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =4500
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =5940
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =3360
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =4800
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =6300
-                    Top =4500
+                    Left =6480
+                    Top =4440
                     Height =1080
                     TabIndex =1
                     Name ="btnClose"
@@ -544,10 +544,10 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =6300
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =7740
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =6480
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin TextBox
@@ -587,6 +587,51 @@ Begin Form
                             ForeTint =100.0
                         End
                     End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =6480
+                    Top =420
+                    Height =315
+                    TabIndex =11
+                    Name ="Text23"
+                    ControlSource ="ID"
+
+                    LayoutCachedLeft =6480
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =735
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =5700
+                            Top =420
+                            Width =690
+                            Height =315
+                            Name ="Label24"
+                            Caption ="ID:"
+                            LayoutCachedLeft =5700
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =6390
+                            LayoutCachedHeight =735
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4920
+                    Top =4440
+                    Height =1080
+                    TabIndex =12
+                    Name ="btnGen10"
+                    Caption ="Generate 10 Random"
+                    OnClick ="[Event Procedure]"
+
+                    LayoutCachedLeft =4920
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =6360
+                    LayoutCachedHeight =5520
                 End
             End
         End

@@ -14,8 +14,8 @@ Begin Form
     Width =10560
     DatasheetFontHeight =11
     ItemSuffix =28
-    Right =14685
-    Bottom =11670
+    Right =15975
+    Bottom =11280
     RecSrcDt = Begin
         0x97a234045531e640
     End
@@ -301,6 +301,7 @@ Begin Form
                     Height =315
                     TabIndex =4
                     Name ="txtFirstName"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =1260
                     LayoutCachedTop =1680
