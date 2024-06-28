@@ -14,8 +14,8 @@ Begin Form
     Width =10560
     DatasheetFontHeight =11
     ItemSuffix =28
-    Right =15975
-    Bottom =11280
+    Right =2040
+    Bottom =11250
     RecSrcDt = Begin
         0x97a234045531e640
     End
@@ -189,19 +189,19 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     ColumnCount =7
-                    Left =240
+                    Left =60
                     Top =3240
-                    Width =10080
+                    Width =10440
                     Height =2760
                     TabIndex =1
                     Name ="lstMain"
                     RowSourceType ="Table/Query"
                     RowSource ="tblCustomers"
-                    ColumnWidths ="432;;;;360;720"
+                    ColumnWidths ="432;;;;2304;720"
 
-                    LayoutCachedLeft =240
+                    LayoutCachedLeft =60
                     LayoutCachedTop =3240
-                    LayoutCachedWidth =10320
+                    LayoutCachedWidth =10500
                     LayoutCachedHeight =6000
                 End
                 Begin TextBox
@@ -338,6 +338,7 @@ Begin Form
                     Height =315
                     TabIndex =5
                     Name ="txtLastName"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =4920
                     LayoutCachedTop =1680
@@ -373,6 +374,7 @@ Begin Form
                     Height =315
                     TabIndex =6
                     Name ="txtCity"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =1260
                     LayoutCachedTop =2580
@@ -408,6 +410,7 @@ Begin Form
                     Height =315
                     TabIndex =7
                     Name ="txtState"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =4140
                     LayoutCachedTop =2580
@@ -444,6 +447,7 @@ Begin Form
                     Height =315
                     TabIndex =8
                     Name ="txtAddress"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =1260
                     LayoutCachedTop =2160

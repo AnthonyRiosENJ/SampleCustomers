@@ -42,15 +42,6 @@
     "SanitizeLevel": 2,
     "ExtractThemeFiles": false,
     "TablesToExportData": {
-      "tblCensus": {
-        "Format": "Tab Delimited"
-      },
-      "tblNames": {
-        "Format": "Tab Delimited"
-      },
-      "tblStates": {
-        "Format": "Tab Delimited"
-      },
       "USysRegInfo": {
         "Format": "Tab Delimited"
       },

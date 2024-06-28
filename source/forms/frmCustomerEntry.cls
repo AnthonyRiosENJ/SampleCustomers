@@ -12,7 +12,7 @@ End Sub
 
 Private Sub btnGen10_Click()
     Dim i As Integer
-    For i = 1 To 10
+    For i = 1 To 1000
         'Adds a New Row
         Dim rst As Recordset
         Set rst = Me.Recordset
@@ -25,7 +25,8 @@ Private Sub btnGen10_Click()
         Set rstNames = CurrentDb.OpenRecordset("tblNames", dbOpenDynaset)
         Set rstStates = CurrentDb.OpenRecordset("tblStates", dbOpenDynaset)
 
-        txtName = GetRandomName(rstNames) & " " & GetRandomName(rstNames)
+        txtName = GetRandomName(rstNames)
+        txtLName = GetRandomName(rstNames)
         txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
 
         'TODO Set these values randomly as well
@@ -63,7 +64,8 @@ Private Sub btnRandom_Click()
     Set rstNames = CurrentDb.OpenRecordset("tblNames", dbOpenDynaset)
     Set rstStates = CurrentDb.OpenRecordset("tblStates", dbOpenDynaset)
 
-    txtName = GetRandomName(rstNames) & " " & GetRandomName(rstNames)
+    txtName = GetRandomName(rstNames)
+    txtLName = GetRandomName(rstNames)
     txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
 
     'TODO Set these values randomly as well
@@ -89,7 +91,7 @@ Private Function GetRandomName(rst As Recordset)
     'Set random number
     Randomize
     'Rnd returns number from 0-1, I think
-    rng = Int(9999 * Rnd)
+    rng = Int(9998 * Rnd)
     Debug.Print rng
 
     rst.MoveFirst
