@@ -1,14 +1,15 @@
 ﻿SELECT
   tblCustomers.CustomerName,
-  tblCustomers.Address,
-  tblCustomers.City,
-  tblCustomers.State,
-  tblCustomers.Zip,
-  tblCustomers.Email,
-  tblCustomers.Phone,
+  tblCustomers.CustomerLName,
   tblTransactions.Subtotal,
   tblTransactions.Tax,
   tblTransactions.Total
 FROM
   tblCustomers
-  LEFT JOIN tblTransactions ON tblCustomers.ID = tblTransactions.CustomerID;
+  LEFT JOIN tblTransactions ON tblCustomers.ID = tblTransactions.CustomerID
+WHERE
+  (
+    (
+      (tblTransactions.Total) Is Not Null
+    )
+  );

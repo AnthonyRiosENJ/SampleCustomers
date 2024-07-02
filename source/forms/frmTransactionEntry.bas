@@ -12,13 +12,13 @@ Begin Form
     GridX =24
     GridY =24
     DatasheetFontHeight =11
-    ItemSuffix =12
-    Right =11670
+    ItemSuffix =15
+    Right =16590
     Bottom =11280
     RecSrcDt = Begin
-        0x1b3c12cad332e640
+        0xe93cb3234f34e640
     End
-    RecordSource ="tblTransactions"
+    RecordSource ="qryCusTransactions"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     ShowPageMargins =0
@@ -133,7 +133,7 @@ Begin Form
                     Left =3300
                     Top =1920
                     Height =315
-                    Name ="Text2"
+                    Name ="txtSubtotal"
                     ControlSource ="Subtotal"
 
                     LayoutCachedLeft =3300
@@ -163,7 +163,7 @@ Begin Form
                     Top =2340
                     Height =315
                     TabIndex =1
-                    Name ="Text4"
+                    Name ="txtTax"
                     ControlSource ="Tax"
 
                     LayoutCachedLeft =3300
@@ -193,7 +193,7 @@ Begin Form
                     Top =2760
                     Height =315
                     TabIndex =2
-                    Name ="Text6"
+                    Name ="txtTotal"
                     ControlSource ="Total"
 
                     LayoutCachedLeft =3300
@@ -234,20 +234,21 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     ColumnCount =2
-                    Left =3060
+                    Left =1620
                     Top =1200
                     Width =1680
                     Height =315
                     TabIndex =3
-                    Name ="Text0"
-                    ControlSource ="CustomerID"
+                    Name ="cbName"
+                    ControlSource ="CustomerName"
                     RowSourceType ="Table/Query"
                     RowSource ="tblCustomers"
                     ColumnWidths ="0"
+                    AfterUpdate ="[Event Procedure]"
 
-                    LayoutCachedLeft =3060
+                    LayoutCachedLeft =1620
                     LayoutCachedTop =1200
-                    LayoutCachedWidth =4740
+                    LayoutCachedWidth =3300
                     LayoutCachedHeight =1515
                     ForeThemeColorIndex =0
                     ForeTint =75.0
@@ -255,22 +256,22 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =2280
+                            Left =840
                             Top =1200
                             Width =690
                             Height =315
                             Name ="Label1"
                             Caption ="Name:"
-                            LayoutCachedLeft =2280
+                            LayoutCachedLeft =840
                             LayoutCachedTop =1200
-                            LayoutCachedWidth =2970
+                            LayoutCachedWidth =1530
                             LayoutCachedHeight =1515
                         End
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2580
+                    Left =1860
                     Top =3540
                     Width =600
                     Height =405
@@ -279,14 +280,14 @@ Begin Form
                     Caption ="Save"
                     OnClick ="[Event Procedure]"
 
-                    LayoutCachedLeft =2580
+                    LayoutCachedLeft =1860
                     LayoutCachedTop =3540
-                    LayoutCachedWidth =3180
+                    LayoutCachedWidth =2460
                     LayoutCachedHeight =3945
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =3480
+                    Left =2700
                     Top =3420
                     Width =1260
                     Height =660
@@ -295,10 +296,62 @@ Begin Form
                     Caption ="New Transaction"
                     OnClick ="[Event Procedure]"
 
-                    LayoutCachedLeft =3480
+                    LayoutCachedLeft =2700
                     LayoutCachedTop =3420
-                    LayoutCachedWidth =4740
+                    LayoutCachedWidth =3960
                     LayoutCachedHeight =4080
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4200
+                    Top =3480
+                    Width =1080
+                    Height =600
+                    TabIndex =6
+                    Name ="btnGen1000"
+                    Caption ="Gen 1000 Random"
+                    OnClick ="[Event Procedure]"
+
+                    LayoutCachedLeft =4200
+                    LayoutCachedTop =3480
+                    LayoutCachedWidth =5280
+                    LayoutCachedHeight =4080
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    ListWidth =1440
+                    Left =4380
+                    Top =1200
+                    Width =1800
+                    Height =315
+                    TabIndex =7
+                    Name ="cbLName"
+                    ControlSource ="CustomerLName"
+                    RowSourceType ="Table/Query"
+                    RowSource ="tblCustomers"
+                    ColumnWidths ="0"
+
+                    LayoutCachedLeft =4380
+                    LayoutCachedTop =1200
+                    LayoutCachedWidth =6180
+                    LayoutCachedHeight =1515
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =3480
+                            Top =1200
+                            Width =795
+                            Height =320
+                            Name ="LName_Label"
+                            Caption ="LName"
+                            LayoutCachedLeft =3480
+                            LayoutCachedTop =1200
+                            LayoutCachedWidth =4275
+                            LayoutCachedHeight =1520
+                        End
+                    End
                 End
             End
         End

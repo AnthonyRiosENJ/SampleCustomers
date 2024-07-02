@@ -1,17 +1,13 @@
 ﻿Operation =1
 Option =0
+Where ="(((tblTransactions.Total) Is Not Null))"
 Begin InputTables
     Name ="tblTransactions"
     Name ="tblCustomers"
 End
 Begin OutputColumns
     Expression ="tblCustomers.CustomerName"
-    Expression ="tblCustomers.Address"
-    Expression ="tblCustomers.City"
-    Expression ="tblCustomers.State"
-    Expression ="tblCustomers.Zip"
-    Expression ="tblCustomers.Email"
-    Expression ="tblCustomers.Phone"
+    Expression ="tblCustomers.CustomerLName"
     Expression ="tblTransactions.Subtotal"
     Expression ="tblTransactions.Tax"
     Expression ="tblTransactions.Total"
@@ -37,27 +33,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblCustomers.Address"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblCustomers.City"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
         dbText "Name" ="tblTransactions.Tax"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblCustomers.Zip"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblCustomers.Email"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblCustomers.Phone"
         dbLong "AggregateType" ="-1"
     End
     Begin
@@ -69,7 +45,7 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="tblCustomers.State"
+        dbText "Name" ="tblCustomers.CustomerLName"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -77,12 +53,12 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =407
-    Bottom =769
+    Right =464
+    Bottom =767
     Left =-1
     Top =-1
-    Right =391
-    Bottom =507
+    Right =448
+    Bottom =473
     Left =0
     Top =0
     ColumnsShown =539
