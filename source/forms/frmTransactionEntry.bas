@@ -12,13 +12,13 @@ Begin Form
     GridX =24
     GridY =24
     DatasheetFontHeight =11
-    ItemSuffix =15
+    ItemSuffix =17
     Right =16590
     Bottom =11280
     RecSrcDt = Begin
-        0xe93cb3234f34e640
+        0x39b5a9b68d34e640
     End
-    RecordSource ="qryCusTransactions"
+    RecordSource ="tblTransactions"
     DatasheetFontName ="Calibri"
     FilterOnLoad =0
     ShowPageMargins =0
@@ -240,7 +240,6 @@ Begin Form
                     Height =315
                     TabIndex =3
                     Name ="cbName"
-                    ControlSource ="CustomerName"
                     RowSourceType ="Table/Query"
                     RowSource ="tblCustomers"
                     ColumnWidths ="0"
@@ -320,7 +319,7 @@ Begin Form
                 Begin ComboBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    ColumnCount =2
+                    ColumnCount =3
                     ListWidth =1440
                     Left =4380
                     Top =1200
@@ -328,10 +327,10 @@ Begin Form
                     Height =315
                     TabIndex =7
                     Name ="cbLName"
-                    ControlSource ="CustomerLName"
                     RowSourceType ="Table/Query"
                     RowSource ="tblCustomers"
-                    ColumnWidths ="0"
+                    ColumnWidths ="0;0"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =4380
                     LayoutCachedTop =1200
@@ -350,6 +349,37 @@ Begin Form
                             LayoutCachedTop =1200
                             LayoutCachedWidth =4275
                             LayoutCachedHeight =1520
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5040
+                    Top =2460
+                    Height =315
+                    TabIndex =8
+                    Name ="txtCusID"
+                    ControlSource ="CustomerID"
+
+                    LayoutCachedLeft =5040
+                    LayoutCachedTop =2460
+                    LayoutCachedWidth =6480
+                    LayoutCachedHeight =2775
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =5160
+                            Top =2100
+                            Width =1170
+                            Height =315
+                            Name ="Label16"
+                            Caption ="CustomerID"
+                            LayoutCachedLeft =5160
+                            LayoutCachedTop =2100
+                            LayoutCachedWidth =6330
+                            LayoutCachedHeight =2415
                         End
                     End
                 End

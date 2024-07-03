@@ -97,7 +97,7 @@ Private Function GetRandomName(rst As Recordset)
     rst.MoveFirst
     rst.Move rng
 
-    GetRandomName = rst!Name
+    GetRandomName = rst!name
 
 End Function
 

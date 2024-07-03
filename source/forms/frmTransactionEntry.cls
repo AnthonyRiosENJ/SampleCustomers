@@ -30,10 +30,13 @@ End Sub
 
 Private Sub btnNewTrans_Click()
     DoCmd.RunCommand acCmdRecordsGoToNew
+
 End Sub
 
 Private Sub btnSave_Click()
  DoCmd.RunCommand acCmdSaveRecord
+ cbLName = ""
+ cbName = ""
 End Sub
 
 Private Function GetRandomName(rstNames As Recordset, cnt As Integer)
@@ -53,7 +56,15 @@ Private Function GetRandomName(rstNames As Recordset, cnt As Integer)
 
 End Function
 
+Private Sub cbLName_AfterUpdate()
+    txtCusID = cbLName.Value
+
+End Sub
+
+
+
 'Me!cbxCombo2.RowSourceType = "Table/Query"
+'Filters the last names so only the appropiate ones appear for the first name entered
 Private Sub cbName_AfterUpdate()
 Dim strSQL As String
 

@@ -11,6 +11,7 @@ Begin OutputColumns
     Expression ="tblTransactions.Subtotal"
     Expression ="tblTransactions.Tax"
     Expression ="tblTransactions.Total"
+    Expression ="tblTransactions.ID"
 End
 Begin Joins
     LeftTable ="tblCustomers"
@@ -21,12 +22,13 @@ End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
-dbBoolean "OrderByOn" ="0"
+dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 dbBoolean "FilterOnLoad" ="0"
 dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
+dbMemo "OrderBy" ="[qryCusTransactions].[ID]"
 Begin
     Begin
         dbText "Name" ="tblCustomers.CustomerName"
@@ -48,17 +50,21 @@ Begin
         dbText "Name" ="tblCustomers.CustomerLName"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblTransactions.ID"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =464
-    Bottom =767
+    Right =1106
+    Bottom =752
     Left =-1
     Top =-1
-    Right =448
-    Bottom =473
+    Right =1090
+    Bottom =456
     Left =0
     Top =0
     ColumnsShown =539
