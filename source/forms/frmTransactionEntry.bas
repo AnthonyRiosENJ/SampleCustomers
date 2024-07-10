@@ -13,8 +13,8 @@ Begin Form
     GridY =24
     DatasheetFontHeight =11
     ItemSuffix =17
-    Right =16590
-    Bottom =11280
+    Right =5880
+    Bottom =10995
     RecSrcDt = Begin
         0x39b5a9b68d34e640
     End

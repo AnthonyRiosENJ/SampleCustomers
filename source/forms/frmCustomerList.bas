@@ -14,8 +14,8 @@ Begin Form
     Width =10560
     DatasheetFontHeight =11
     ItemSuffix =28
-    Right =2040
-    Bottom =11250
+    Right =15510
+    Bottom =11025
     RecSrcDt = Begin
         0x97a234045531e640
     End
@@ -300,7 +300,7 @@ Begin Form
                     Width =2280
                     Height =315
                     TabIndex =4
-                    Name ="txtFirstName"
+                    Name ="txtCustomerName"
                     AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =1260
@@ -337,7 +337,7 @@ Begin Form
                     Width =2760
                     Height =315
                     TabIndex =5
-                    Name ="txtLastName"
+                    Name ="txtCustomerLName"
                     AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =4920
@@ -369,23 +369,23 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =1260
-                    Top =2580
+                    Left =1320
+                    Top =2595
                     Height =315
                     TabIndex =6
                     Name ="txtCity"
                     AfterUpdate ="[Event Procedure]"
 
-                    LayoutCachedLeft =1260
-                    LayoutCachedTop =2580
-                    LayoutCachedWidth =2700
-                    LayoutCachedHeight =2895
+                    LayoutCachedLeft =1320
+                    LayoutCachedTop =2595
+                    LayoutCachedWidth =2760
+                    LayoutCachedHeight =2910
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
-                            Left =240
-                            Top =2565
+                            Left =300
+                            Top =2580
                             Width =1005
                             Height =315
                             FontSize =12
@@ -393,10 +393,10 @@ Begin Form
                             Name ="Label23"
                             Caption ="City"
                             FontName ="Times New Roman"
-                            LayoutCachedLeft =240
-                            LayoutCachedTop =2565
-                            LayoutCachedWidth =1245
-                            LayoutCachedHeight =2880
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =2580
+                            LayoutCachedWidth =1305
+                            LayoutCachedHeight =2895
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End

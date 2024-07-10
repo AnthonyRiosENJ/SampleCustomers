@@ -10,58 +10,25 @@ Private Sub updateQry()
     Dim qry As String
     qry = "SELECT * FROM tblCustomers "
 
-    If Not (txtZip & "" = "") Then
-        qry = qry & "WHERE Zip LIKE '" & txtZip & "*' "
-        isFilled = True
-    End If
 
-    If Not (txtFirstName & "" = "") Then
-        If isFilled Then
-            qry = qry & "AND CustomerName LIKE '" & txtFirstName & "*' "
-        Else
-            qry = qry & "WHERE CustomerName LIKE '" & txtFirstName & "*' "
-        End If
-        isFilled = True
-    End If
+    Dim txt As Access.Control
 
-    If Not (txtLastName & "" = "") Then
-        If isFilled Then
-            qry = qry & "AND CustomerLName LIKE '" & txtLastName & "*' "
-        Else
-            qry = qry & "WHERE CustomerLName LIKE '" & txtLastName & "*' "
+    For Each txt In Forms!frmCustomerList.Controls
+        If txt.ControlType = acTextBox Then
+            If Not (txt & "" = "") Then
+               If isFilled Then
+                   qry = qry & "AND " & Mid(txt.name, 4) & " LIKE '" & txt & "*' "
+               Else
+                   qry = qry & "Where " & Mid(txt.name, 4) & " LIKE '" & txt & "*' "
+                   isFilled = True
+               End If
+            End If
         End If
-        isFilled = True
-    End If
-
-    If Not (txtAddress & "" = "") Then
-        If isFilled Then
-            qry = qry & "AND Address LIKE '" & txtAddress & "*' "
-        Else
-            qry = qry & "WHERE Address LIKE '" & txtAddress & "*' "
-        End If
-        isFilled = True
-    End If
-
-    If Not (txtState & "" = "") Then
-        If isFilled Then
-            qry = qry & "AND State LIKE '" & txtState & "*' "
-        Else
-            qry = qry & "WHERE State LIKE '" & txtState & "*' "
-        End If
-        isFilled = True
-    End If
-
-    If Not (txtCity & "" = "") Then
-        If isFilled Then
-            qry = qry & "AND City LIKE '" & txtCity & "*' "
-        Else
-            qry = qry & "WHERE City LIKE '" & txtCity & "*' "
-        End If
-        isFilled = True
-    End If
+    Next txt
 
     Debug.Print qry
     lstMain.RowSource = qry
+
 End Sub
 
 Private Sub btnClose_Click()
@@ -103,11 +70,11 @@ Private Sub txtCity_AfterUpdate()
     updateQry
 End Sub
 
-Private Sub txtFirstName_AfterUpdate()
+Private Sub txtCustomerName_AfterUpdate()
     updateQry
 End Sub
 
-Private Sub txtLastName_AfterUpdate()
+Private Sub txtCustomerLName_AfterUpdate()
     updateQry
 End Sub
 

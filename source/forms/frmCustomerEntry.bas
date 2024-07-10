@@ -4,6 +4,7 @@ Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     PictureAlignment =2
@@ -14,8 +15,9 @@ Begin Form
     Width =8040
     DatasheetFontHeight =11
     ItemSuffix =28
-    Right =15975
-    Bottom =11280
+    Right =11205
+    Bottom =11025
+    Filter ="ID=85"
     RecSrcDt = Begin
         0xff3d29d95531e640
     End
@@ -345,9 +347,10 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =120
-                    Top =4440
-                    Height =1080
+                    Left =360
+                    Top =4980
+                    Width =1140
+                    Height =540
                     TabIndex =2
                     Name ="btnSave"
                     Caption ="Save"
@@ -389,9 +392,9 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =120
-                    LayoutCachedTop =4440
-                    LayoutCachedWidth =1560
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =4980
+                    LayoutCachedWidth =1500
                     LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End

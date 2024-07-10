@@ -44,7 +44,8 @@ Private Sub btnGen10_Click()
 End Sub
 
 Private Sub btnSave_Click()
-    DoCmd.RunCommand acCmdSaveRecord
+   DoCmd.RunCommand acCmdSaveRecord
+
 End Sub
 
 Private Sub btnNew_Click()
@@ -52,7 +53,12 @@ Private Sub btnNew_Click()
 
     'Set rst = Me.Recordset
     'rst.AddNew
-    DoCmd.RunCommand acCmdRecordsGoToNew
+    If IsNull(txtName) And IsNull(txtLName) And IsNull(txtAddress) And IsNull(txtCity) And IsNull(txtEmail) And IsNull(txtPhone) And IsNull(txtState) And IsNull(txtZip) Then
+        MsgBox ("You're already on a new record.")
+    Else
+        DoCmd.RunCommand acCmdRecordsGoToNew
+    End If
+
 
 
 End Sub

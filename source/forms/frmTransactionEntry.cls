@@ -29,7 +29,11 @@ Private Sub btnGen1000_Click()
 End Sub
 
 Private Sub btnNewTrans_Click()
-    DoCmd.RunCommand acCmdRecordsGoToNew
+    If IsNull(cbName) And IsNull(cbLName) And txtSubtotal = 0# Then
+        MsgBox ("You're already on a new record")
+    Else
+        DoCmd.RunCommand acCmdRecordsGoToNew
+    End If
 
 End Sub
 
