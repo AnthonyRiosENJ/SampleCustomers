@@ -3,5 +3,6 @@
   [CustomerID] LONG,
   [Subtotal] CURRENCY,
   [Tax] CURRENCY,
-  [Total] CURRENCY
+  [Total] CURRENCY,
+  [TDate] DATETIME
 )

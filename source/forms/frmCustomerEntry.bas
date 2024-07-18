@@ -3,8 +3,9 @@ VersionRequired =20
 Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
+    AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     PictureAlignment =2
@@ -14,10 +15,10 @@ Begin Form
     GridY =24
     Width =8040
     DatasheetFontHeight =11
-    ItemSuffix =28
-    Right =11205
+    ItemSuffix =32
+    Right =15450
     Bottom =11025
-    Filter ="ID=85"
+    Filter ="ID=69"
     RecSrcDt = Begin
         0xff3d29d95531e640
     End
@@ -93,7 +94,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin Section
-            Height =5820
+            Height =6060
             Name ="Detail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -110,7 +111,7 @@ Begin Form
                     FontSize =20
                     BorderColor =0
                     ForeColor =0
-                    Name ="Label1"
+                    Name ="lblTitle"
                     Caption ="Customer Entry"
                     FontName ="Times New Roman"
                     LayoutCachedLeft =2640
@@ -346,11 +347,11 @@ Begin Form
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =85
-                    Left =360
-                    Top =4980
-                    Width =1140
-                    Height =540
+                    Visible = NotDefault
+                    OverlapFlags =93
+                    Left =120
+                    Top =4440
+                    Height =1080
                     TabIndex =2
                     Name ="btnSave"
                     Caption ="Save"
@@ -392,11 +393,12 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =360
-                    LayoutCachedTop =4980
-                    LayoutCachedWidth =1500
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =1560
                     LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -672,6 +674,38 @@ Begin Form
                             ForeTint =100.0
                         End
                     End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =120
+                    Top =4440
+                    Height =1080
+                    TabIndex =14
+                    Name ="btnEdit"
+                    Caption ="Edit "
+                    OnClick ="[Event Procedure]"
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =1560
+                    LayoutCachedHeight =5520
+                    Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =360
+                    Top =420
+                    Width =1560
+                    Height =420
+                    FontSize =18
+                    ForeColor =0
+                    Name ="lblMode"
+                    Caption ="Viewing"
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =1920
+                    LayoutCachedHeight =840
+                    ForeTint =100.0
                 End
             End
         End

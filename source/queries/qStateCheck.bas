@@ -7,6 +7,7 @@ End
 Begin OutputColumns
     Expression ="tblStates.State"
     Expression ="tblStates.StateFull"
+    Expression ="tblStates.StateNum"
 End
 Begin Joins
     LeftTable ="tblStates"
@@ -32,34 +33,38 @@ Begin
         dbText "Name" ="tblStates.StateFull"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="tblStates.StateNum"
+        dbLong "AggregateType" ="-1"
+    End
 End
 Begin
     State =0
     Left =0
     Top =0
-    Right =795
-    Bottom =865
+    Right =1034
+    Bottom =752
     Left =-1
     Top =-1
-    Right =779
-    Bottom =203
+    Right =1018
+    Bottom =169
     Left =0
     Top =0
     ColumnsShown =539
     Begin
         Left =271
-        Top =29
+        Top =12
         Right =415
-        Bottom =173
+        Bottom =156
         Top =0
         Name ="tblStates"
         Name =""
     End
     Begin
-        Left =462
-        Top =39
-        Right =606
-        Bottom =183
+        Left =457
+        Top =17
+        Right =601
+        Bottom =161
         Top =0
         Name ="tblCensus"
         Name =""

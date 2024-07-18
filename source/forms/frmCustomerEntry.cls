@@ -10,6 +10,7 @@ Private Sub btnClose_Click()
     DoCmd.Close
 End Sub
 
+
 Private Sub btnGen10_Click()
     Dim i As Integer
     For i = 1 To 1000
@@ -43,8 +44,24 @@ Private Sub btnGen10_Click()
 
 End Sub
 
+Private Sub btnEdit_Click()
+    Me.AllowEdits = True
+    Me.AllowDeletions = True
+    Me.btnClose.SetFocus
+    btnEdit.Visible = False
+    btnSave.Visible = True
+    lblMode.Caption = "Editing"
+
+End Sub
+
 Private Sub btnSave_Click()
-   DoCmd.RunCommand acCmdSaveRecord
+    DoCmd.RunCommand acCmdSaveRecord
+    Me.AllowEdits = False
+    Me.AllowDeletions = False
+    Me.btnClose.SetFocus
+    btnEdit.Visible = True
+    btnSave.Visible = False
+    lblMode.Caption = "Viewing"
 
 End Sub
 

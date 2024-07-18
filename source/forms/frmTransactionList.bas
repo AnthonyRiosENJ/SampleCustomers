@@ -10,8 +10,8 @@ Begin Form
     GridY =24
     Width =8640
     DatasheetFontHeight =11
-    ItemSuffix =13
-    Right =12285
+    ItemSuffix =15
+    Right =15450
     Bottom =11025
     RecSrcDt = Begin
         0xf89fd40f4d34e640
@@ -144,8 +144,9 @@ Begin Form
                     TabIndex =2
                     Name ="cblName"
                     RowSourceType ="Table/Query"
-                    RowSource ="tblCustomers"
+                    RowSource ="SELECT DISTINCT CustomerLName FROM qryCusTransactions; "
                     ColumnWidths ="0"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =5400
                     LayoutCachedTop =1440
@@ -181,10 +182,8 @@ Begin Form
                     TabIndex =3
                     Name ="lstMain"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT [tblTransactions].[ID], [tblTransactions].[CustomerID], [tblTransactions]"
-                        ".[Subtotal], [tblTransactions].[Tax], [tblTransactions].[Total] FROM tblTransact"
-                        "ions ORDER BY [CustomerID], [Subtotal], [Tax], [Total]; "
-                    ColumnWidths ="0;1440;1440;1440;1440"
+                    RowSource ="SELECT * FROM qryCusTransactions WHERE CustomerName='Benjamin' AND Total=50; "
+                    ColumnWidths ="1440;1440;1440;1440;1440"
 
                     LayoutCachedLeft =1260
                     LayoutCachedTop =2880
@@ -195,20 +194,20 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     ColumnCount =5
-                    Left =4080
+                    Left =2640
                     Top =1980
                     Height =315
                     TabIndex =1
                     BoundColumn =4
-                    Name ="txtTotal"
+                    Name ="cbTotal"
                     RowSourceType ="Table/Query"
-                    RowSource ="qryCusTransactions"
+                    RowSource ="SELECT * FROM qryCusTransactions WHERE CustomerName='Benjamin'; "
                     ColumnWidths ="0;0;0;0"
                     AfterUpdate ="[Event Procedure]"
 
-                    LayoutCachedLeft =4080
+                    LayoutCachedLeft =2640
                     LayoutCachedTop =1980
-                    LayoutCachedWidth =5520
+                    LayoutCachedWidth =4080
                     LayoutCachedHeight =2295
                     ForeThemeColorIndex =0
                     ForeTint =75.0
@@ -216,16 +215,16 @@ Begin Form
                     Begin
                         Begin Label
                             OverlapFlags =85
-                            Left =3060
+                            Left =1860
                             Top =1980
-                            Width =900
-                            Height =315
+                            Width =660
+                            Height =300
                             Name ="Label10"
                             Caption ="Total:"
-                            LayoutCachedLeft =3060
+                            LayoutCachedLeft =1860
                             LayoutCachedTop =1980
-                            LayoutCachedWidth =3960
-                            LayoutCachedHeight =2295
+                            LayoutCachedWidth =2520
+                            LayoutCachedHeight =2280
                         End
                     End
                 End

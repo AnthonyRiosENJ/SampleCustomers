@@ -12,6 +12,7 @@
     <xsd:annotation>
       <xsd:appinfo>
         <od:index index-name="ID" index-key="ID " primary="yes" unique="yes" clustered="no" order="asc"></od:index>
+        <od:index index-name="StateNum" index-key="StateNum " primary="no" unique="no" clustered="no" order="asc"></od:index>
         <od:tableProperty name="Orientation" type="2" value="0"></od:tableProperty>
         <od:tableProperty name="OrderByOn" type="1" value="0"></od:tableProperty>
         <od:tableProperty name="DefaultView" type="2" value="2"></od:tableProperty>
@@ -37,6 +38,12 @@
           <xsd:annotation>
             <xsd:appinfo>
               <od:fieldProperty name="ColumnOrder" type="3" value="0"></od:fieldProperty>
+              <od:fieldProperty name="ColumnWidth" type="3" value="-1"></od:fieldProperty>
+              <od:fieldProperty name="ColumnHidden" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="TextAlign" type="2" value="0"></od:fieldProperty>
+              <od:fieldProperty name="AggregateType" type="4" value="-1"></od:fieldProperty>
+              <od:fieldProperty name="ResultType" type="2" value="0"></od:fieldProperty>
+              <od:fieldProperty name="CurrencyLCID" type="4" value="0"></od:fieldProperty>
             </xsd:appinfo>
           </xsd:annotation>
         </xsd:element>
@@ -135,6 +142,23 @@
               <xsd:maxLength value="255"></xsd:maxLength>
             </xsd:restriction>
           </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="StateNum" minOccurs="0" od:jetType="longinteger" od:sqlSType="int" type="xsd:int">
+          <xsd:annotation>
+            <xsd:appinfo>
+              <od:fieldProperty name="ColumnWidth" type="3" value="-1"></od:fieldProperty>
+              <od:fieldProperty name="ColumnOrder" type="3" value="0"></od:fieldProperty>
+              <od:fieldProperty name="ColumnHidden" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="DecimalPlaces" type="2" value="255"></od:fieldProperty>
+              <od:fieldProperty name="DefaultValue" type="12" value="0"></od:fieldProperty>
+              <od:fieldProperty name="Required" type="1" value="0"></od:fieldProperty>
+              <od:fieldProperty name="DisplayControl" type="3" value="109"></od:fieldProperty>
+              <od:fieldProperty name="TextAlign" type="2" value="0"></od:fieldProperty>
+              <od:fieldProperty name="AggregateType" type="4" value="-1"></od:fieldProperty>
+              <od:fieldProperty name="ResultType" type="2" value="0"></od:fieldProperty>
+              <od:fieldProperty name="CurrencyLCID" type="4" value="0"></od:fieldProperty>
+            </xsd:appinfo>
+          </xsd:annotation>
         </xsd:element>
       </xsd:sequence>
     </xsd:complexType>

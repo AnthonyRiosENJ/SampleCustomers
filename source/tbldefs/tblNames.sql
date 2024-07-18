@@ -1,3 +1,4 @@
 ﻿CREATE TABLE [tblNames] (
-  [Name] VARCHAR (255)
+  [Name] VARCHAR (255),
+  [NameNum] AUTOINCREMENT
 )

@@ -11,10 +11,11 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
+    Width =7800
     DatasheetFontHeight =11
-    ItemSuffix =17
-    Right =5880
-    Bottom =10995
+    ItemSuffix =19
+    Right =15255
+    Bottom =11025
     RecSrcDt = Begin
         0x39b5a9b68d34e640
     End
@@ -380,6 +381,37 @@ Begin Form
                             LayoutCachedTop =2100
                             LayoutCachedWidth =6330
                             LayoutCachedHeight =2415
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =6180
+                    Top =360
+                    Width =1560
+                    Height =315
+                    TabIndex =9
+                    Name ="Text17"
+                    ControlSource ="TDate"
+
+                    LayoutCachedLeft =6180
+                    LayoutCachedTop =360
+                    LayoutCachedWidth =7740
+                    LayoutCachedHeight =675
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =5220
+                            Top =360
+                            Width =900
+                            Height =315
+                            Name ="Label18"
+                            Caption ="Date:"
+                            LayoutCachedLeft =5220
+                            LayoutCachedTop =360
+                            LayoutCachedWidth =6120
+                            LayoutCachedHeight =675
                         End
                     End
                 End

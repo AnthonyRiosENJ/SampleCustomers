@@ -16,8 +16,8 @@ Private Sub updateQry()
 
        qry = qry & "Where CustomerName='" & cbName.Text & "' "
 
-       cbLName.RowSource = "Select distinct CustomerLName From qryCusTransactions"
-       txtTotal.RowSource = qry
+       cbLName.RowSource = qry
+       cbTotal.RowSource = qry
        Debug.Print qry
 
        isFilled = True
@@ -32,17 +32,17 @@ Private Sub updateQry()
        Else
            qry = qry & "Where CustomerLName='" & cbLName.Text & "' "
        End If
-       txtTotal.RowSource = qry
+       cbTotal.RowSource = qry
        isFilled = True
     End If
 
 
-    If Not (txtTotal & "" = "") Then
+    If Not (cbTotal & "" = "") Then
 
        If isFilled Then
-           qry = qry & "AND Total=" & txtTotal & " "
+           qry = qry & "AND Total=" & cbTotal & " "
        Else
-           qry = qry & "Where Total=" & txtTotal & " "
+           qry = qry & "Where Total=" & cbTotal & " "
        End If
 
 
@@ -51,18 +51,15 @@ Private Sub updateQry()
        Debug.Print qry
        lstMain.RowSource = qry
 End Sub
-Private Sub cbName_AfterUpdate()
-    'Dim name As String
-    'name = "Select * From tblCustomers Where CustomerName='" & cbName.Text & "' "
-    'cbLName.RowSource = lastNFilter
-    'Debug.Print strSQL
+
+Private Sub cbLName_AfterUpdate()
     updateQry
 End Sub
 
-Private Sub txtTotal_AfterUpdate()
-    'Dim Total As Integer
-    'Total = "Select * From tblTransactions Where Total='" & txtTotal & "'"
-    'txtTotal.RowSource = Total
-    'Debug.Print Total
+Private Sub cbName_AfterUpdate()
+    updateQry
+End Sub
+
+Private Sub cbTotal_AfterUpdate()
     updateQry
 End Sub
