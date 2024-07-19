@@ -1,6 +1,5 @@
 ﻿Operation =1
-Option =50
-RowCount ="25"
+Option =2
 Having ="(((tblCensus.City) Not Like 'Balance of*'))"
 Begin InputTables
     Name ="tblCensus"
@@ -51,7 +50,7 @@ Begin
     Left =-1
     Top =-1
     Right =1014
-    Bottom =237
+    Bottom =220
     Left =0
     Top =96
     ColumnsShown =543

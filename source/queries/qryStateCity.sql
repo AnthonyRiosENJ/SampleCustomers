@@ -1,5 +1,5 @@
 ﻿SELECT
-  DISTINCT TOP 25 PERCENT tblCensus.City,
+  DISTINCT tblCensus.City,
   tblCensus.State
 FROM
   tblCensus

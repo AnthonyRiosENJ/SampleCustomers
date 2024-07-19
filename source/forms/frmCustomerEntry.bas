@@ -16,7 +16,7 @@ Begin Form
     Width =8040
     DatasheetFontHeight =11
     ItemSuffix =32
-    Right =15450
+    Right =15195
     Bottom =11025
     Filter ="ID=69"
     RecSrcDt = Begin

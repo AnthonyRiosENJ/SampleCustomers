@@ -15,9 +15,7 @@ Private Sub btnGen10_Click()
     Dim i As Integer
     For i = 1 To 1000
         'Adds a New Row
-        Dim rst As Recordset
-        Set rst = Me.Recordset
-        rst.AddNew
+        DoCmd.RunCommand acCmdRecordsGoToNew
 
         'Generates a Random Customer
         Dim rstNames As Recordset
