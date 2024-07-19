@@ -1,0 +1,3 @@
+﻿CREATE TABLE [tblNumbers] (
+  [Num] LONG CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL
+)

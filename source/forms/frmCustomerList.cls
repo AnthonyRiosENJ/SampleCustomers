@@ -4,6 +4,33 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Private Sub updateQry()
+    Dim isFilled As Boolean
+    isFilled = False
+    Dim qry As String
+    qry = "SELECT * FROM tblCustomers "
+
+
+    Dim txt As Access.Control
+
+    For Each txt In Forms!frmCustomerList.Controls
+        If txt.ControlType = acTextBox Then
+            If Not (txt & "" = "") Then
+               If isFilled Then
+                   qry = qry & "AND " & Mid(txt.name, 4) & " LIKE '" & txt & "*' "
+               Else
+                   qry = qry & "Where " & Mid(txt.name, 4) & " LIKE '" & txt & "*' "
+                   isFilled = True
+               End If
+            End If
+        End If
+    Next txt
+
+    Debug.Print qry
+    lstMain.RowSource = qry
+
+End Sub
+
 Private Sub btnClose_Click()
     DoCmd.Close
 End Sub
@@ -34,14 +61,29 @@ Private Sub btnView_Click()
 
 End Sub
 
+Private Sub txtAddress_AfterUpdate()
+    updateQry
+End Sub
+
+
+Private Sub txtCity_AfterUpdate()
+    updateQry
+End Sub
+
+Private Sub txtCustomerName_AfterUpdate()
+    updateQry
+End Sub
+
+Private Sub txtCustomerLName_AfterUpdate()
+    updateQry
+End Sub
+
+
+Private Sub txtState_AfterUpdate()
+    updateQry
+End Sub
+
+
 Private Sub txtZip_AfterUpdate()
-
-    'Check if zip has a value
-    'TODO: Fix this so it accepts partials
-    If txtZip & "" = "" Then
-        lstMain.RowSource = "tblCustomers"
-    Else
-        lstMain.RowSource = "SELECT * FROM tblCustomers WHERE Zip='" & txtZip & "'"
-    End If
-
+    updateQry
 End Sub

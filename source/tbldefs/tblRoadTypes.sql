@@ -1,0 +1,4 @@
+﻿CREATE TABLE [tblRoadTypes] (
+  [Type] VARCHAR (255),
+  [RoadNum] AUTOINCREMENT CONSTRAINT [PrimaryKey] PRIMARY KEY UNIQUE NOT NULL
+)

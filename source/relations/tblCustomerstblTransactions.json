@@ -1,0 +1,18 @@
+﻿{
+  "Info": {
+    "Class": "clsDbRelation",
+    "Description": "Database relationship"
+  },
+  "Items": {
+    "Name": "tblCustomerstblTransactions",
+    "Attributes": 16777218,
+    "Table": "tblCustomers",
+    "ForeignTable": "tblTransactions",
+    "Fields": [
+      {
+        "Name": "ID",
+        "ForeignName": "CustomerID"
+      }
+    ]
+  }
+}

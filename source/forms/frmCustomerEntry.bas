@@ -3,7 +3,9 @@ VersionRequired =20
 Begin Form
     RecordSelectors = NotDefault
     NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
     DividingLines = NotDefault
+    AllowEdits = NotDefault
     AllowDesignChanges = NotDefault
     DefaultView =0
     PictureAlignment =2
@@ -11,11 +13,12 @@ Begin Form
     Cycle =1
     GridX =24
     GridY =24
-    Width =7920
+    Width =8040
     DatasheetFontHeight =11
-    ItemSuffix =23
-    Right =14685
-    Bottom =11670
+    ItemSuffix =32
+    Right =15195
+    Bottom =11025
+    Filter ="ID=69"
     RecSrcDt = Begin
         0xff3d29d95531e640
     End
@@ -91,7 +94,7 @@ Begin Form
             GridlineShade =65.0
         End
         Begin Section
-            Height =5820
+            Height =6060
             Name ="Detail"
             AlternateBackThemeColorIndex =1
             AlternateBackShade =95.0
@@ -108,7 +111,7 @@ Begin Form
                     FontSize =20
                     BorderColor =0
                     ForeColor =0
-                    Name ="Label1"
+                    Name ="lblTitle"
                     Caption ="Customer Entry"
                     FontName ="Times New Roman"
                     LayoutCachedLeft =2640
@@ -160,7 +163,7 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1440
-                    Top =1455
+                    Top =1860
                     Width =4320
                     Height =315
                     TabIndex =4
@@ -168,15 +171,15 @@ Begin Form
                     ControlSource ="Address"
 
                     LayoutCachedLeft =1440
-                    LayoutCachedTop =1455
+                    LayoutCachedTop =1860
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =1770
+                    LayoutCachedHeight =2175
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
                             Left =420
-                            Top =1455
+                            Top =1860
                             Width =1005
                             Height =315
                             FontSize =12
@@ -185,9 +188,9 @@ Begin Form
                             Caption ="Address"
                             FontName ="Times New Roman"
                             LayoutCachedLeft =420
-                            LayoutCachedTop =1455
+                            LayoutCachedTop =1860
                             LayoutCachedWidth =1425
-                            LayoutCachedHeight =1770
+                            LayoutCachedHeight =2175
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
@@ -197,7 +200,7 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1440
-                    Top =1890
+                    Top =2295
                     Width =4320
                     Height =315
                     TabIndex =5
@@ -205,15 +208,15 @@ Begin Form
                     ControlSource ="City"
 
                     LayoutCachedLeft =1440
-                    LayoutCachedTop =1890
+                    LayoutCachedTop =2295
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =2205
+                    LayoutCachedHeight =2610
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
                             Left =420
-                            Top =1890
+                            Top =2295
                             Width =1005
                             Height =315
                             FontSize =12
@@ -222,9 +225,9 @@ Begin Form
                             Caption ="City"
                             FontName ="Times New Roman"
                             LayoutCachedLeft =420
-                            LayoutCachedTop =1890
+                            LayoutCachedTop =2295
                             LayoutCachedWidth =1425
-                            LayoutCachedHeight =2205
+                            LayoutCachedHeight =2610
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
@@ -234,7 +237,7 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1440
-                    Top =2325
+                    Top =2730
                     Width =840
                     Height =315
                     TabIndex =6
@@ -243,15 +246,15 @@ Begin Form
                     InputMask =">AA;;_"
 
                     LayoutCachedLeft =1440
-                    LayoutCachedTop =2325
+                    LayoutCachedTop =2730
                     LayoutCachedWidth =2280
-                    LayoutCachedHeight =2640
+                    LayoutCachedHeight =3045
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
                             Left =420
-                            Top =2325
+                            Top =2730
                             Width =1005
                             Height =315
                             FontSize =12
@@ -260,9 +263,9 @@ Begin Form
                             Caption ="State"
                             FontName ="Times New Roman"
                             LayoutCachedLeft =420
-                            LayoutCachedTop =2325
+                            LayoutCachedTop =2730
                             LayoutCachedWidth =1425
-                            LayoutCachedHeight =2640
+                            LayoutCachedHeight =3045
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
@@ -272,7 +275,7 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =3540
-                    Top =2340
+                    Top =2745
                     Width =1320
                     Height =315
                     TabIndex =7
@@ -281,15 +284,15 @@ Begin Form
                     InputMask ="00000;;_"
 
                     LayoutCachedLeft =3540
-                    LayoutCachedTop =2340
+                    LayoutCachedTop =2745
                     LayoutCachedWidth =4860
-                    LayoutCachedHeight =2655
+                    LayoutCachedHeight =3060
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
                             Left =2520
-                            Top =2340
+                            Top =2745
                             Width =1005
                             Height =315
                             FontSize =12
@@ -298,9 +301,9 @@ Begin Form
                             Caption ="Zip"
                             FontName ="Times New Roman"
                             LayoutCachedLeft =2520
-                            LayoutCachedTop =2340
+                            LayoutCachedTop =2745
                             LayoutCachedWidth =3525
-                            LayoutCachedHeight =2655
+                            LayoutCachedHeight =3060
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
@@ -310,7 +313,7 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1440
-                    Top =2820
+                    Top =3225
                     Width =4320
                     Height =315
                     TabIndex =8
@@ -318,15 +321,15 @@ Begin Form
                     ControlSource ="Email"
 
                     LayoutCachedLeft =1440
-                    LayoutCachedTop =2820
+                    LayoutCachedTop =3225
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =3135
+                    LayoutCachedHeight =3540
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
                             Left =420
-                            Top =2820
+                            Top =3225
                             Width =1005
                             Height =315
                             FontSize =12
@@ -335,18 +338,19 @@ Begin Form
                             Caption ="Email"
                             FontName ="Times New Roman"
                             LayoutCachedLeft =420
-                            LayoutCachedTop =2820
+                            LayoutCachedTop =3225
                             LayoutCachedWidth =1425
-                            LayoutCachedHeight =3135
+                            LayoutCachedHeight =3540
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =85
-                    Left =900
-                    Top =4500
+                    Visible = NotDefault
+                    OverlapFlags =93
+                    Left =120
+                    Top =4440
                     Height =1080
                     TabIndex =2
                     Name ="btnSave"
@@ -389,16 +393,17 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =900
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =2340
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =1560
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
+                    Overlaps =1
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2700
-                    Top =4500
+                    Left =1740
+                    Top =4440
                     Height =1080
                     Name ="btnNew"
                     Caption ="Add New"
@@ -440,16 +445,16 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =2700
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =4140
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =1740
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =3180
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =4500
-                    Top =4500
+                    Left =3360
+                    Top =4440
                     Height =1080
                     TabIndex =9
                     Name ="btnRandom"
@@ -492,16 +497,16 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =4500
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =5940
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =3360
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =4800
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =6300
-                    Top =4500
+                    Left =6480
+                    Top =4440
                     Height =1080
                     TabIndex =1
                     Name ="btnClose"
@@ -544,17 +549,17 @@ Begin Form
                         0x0000000000000000
                     End
 
-                    LayoutCachedLeft =6300
-                    LayoutCachedTop =4500
-                    LayoutCachedWidth =7740
-                    LayoutCachedHeight =5580
+                    LayoutCachedLeft =6480
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =5520
                     PictureCaptionArrangement =2
                 End
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
                     Left =1440
-                    Top =3300
+                    Top =3705
                     Width =4320
                     Height =315
                     TabIndex =10
@@ -563,15 +568,15 @@ Begin Form
                     InputMask ="!\\(999\") \"000\\-0000;;_"
 
                     LayoutCachedLeft =1440
-                    LayoutCachedTop =3300
+                    LayoutCachedTop =3705
                     LayoutCachedWidth =5760
-                    LayoutCachedHeight =3615
+                    LayoutCachedHeight =4020
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
                             Left =420
-                            Top =3300
+                            Top =3705
                             Width =1005
                             Height =315
                             FontSize =12
@@ -580,13 +585,127 @@ Begin Form
                             Caption ="Phone"
                             FontName ="Times New Roman"
                             LayoutCachedLeft =420
-                            LayoutCachedTop =3300
+                            LayoutCachedTop =3705
                             LayoutCachedWidth =1425
-                            LayoutCachedHeight =3615
+                            LayoutCachedHeight =4020
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
                     End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =6480
+                    Top =420
+                    Height =315
+                    TabIndex =11
+                    Name ="Text23"
+                    ControlSource ="ID"
+
+                    LayoutCachedLeft =6480
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =7920
+                    LayoutCachedHeight =735
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =5700
+                            Top =420
+                            Width =690
+                            Height =315
+                            Name ="Label24"
+                            Caption ="ID:"
+                            LayoutCachedLeft =5700
+                            LayoutCachedTop =420
+                            LayoutCachedWidth =6390
+                            LayoutCachedHeight =735
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4920
+                    Top =4440
+                    Height =1080
+                    TabIndex =12
+                    Name ="btnGen10"
+                    Caption ="Generate 10 Random"
+                    OnClick ="[Event Procedure]"
+
+                    LayoutCachedLeft =4920
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =6360
+                    LayoutCachedHeight =5520
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =1440
+                    Top =1440
+                    Width =4320
+                    Height =315
+                    TabIndex =13
+                    Name ="txtLName"
+                    ControlSource ="CustomerLName"
+
+                    LayoutCachedLeft =1440
+                    LayoutCachedTop =1440
+                    LayoutCachedWidth =5760
+                    LayoutCachedHeight =1755
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextFontFamily =18
+                            Left =360
+                            Top =1440
+                            Width =1125
+                            Height =345
+                            FontSize =12
+                            ForeColor =0
+                            Name ="Label27"
+                            Caption ="Last Name"
+                            FontName ="Times New Roman"
+                            LayoutCachedLeft =360
+                            LayoutCachedTop =1440
+                            LayoutCachedWidth =1485
+                            LayoutCachedHeight =1785
+                            ThemeFontIndex =-1
+                            ForeTint =100.0
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =120
+                    Top =4440
+                    Height =1080
+                    TabIndex =14
+                    Name ="btnEdit"
+                    Caption ="Edit "
+                    OnClick ="[Event Procedure]"
+
+                    LayoutCachedLeft =120
+                    LayoutCachedTop =4440
+                    LayoutCachedWidth =1560
+                    LayoutCachedHeight =5520
+                    Overlaps =1
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =360
+                    Top =420
+                    Width =1560
+                    Height =420
+                    FontSize =18
+                    ForeColor =0
+                    Name ="lblMode"
+                    Caption ="Viewing"
+                    LayoutCachedLeft =360
+                    LayoutCachedTop =420
+                    LayoutCachedWidth =1920
+                    LayoutCachedHeight =840
+                    ForeTint =100.0
                 End
             End
         End

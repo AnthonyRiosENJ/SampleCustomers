@@ -4,34 +4,95 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 
+Dim stateFull As String
+
 Private Sub btnClose_Click()
     DoCmd.Close
 End Sub
 
+
+Private Sub btnGen10_Click()
+    Dim i As Integer
+    For i = 1 To 1000
+        'Adds a New Row
+        DoCmd.RunCommand acCmdRecordsGoToNew
+
+        'Generates a Random Customer
+        Dim rstNames As Recordset
+        Dim rstStates As Recordset
+
+        Set rstNames = CurrentDb.OpenRecordset("tblNames", dbOpenDynaset)
+        Set rstStates = CurrentDb.OpenRecordset("tblStates", dbOpenDynaset)
+
+        txtName = GetRandomName(rstNames)
+        txtLName = GetRandomName(rstNames)
+        txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
+
+        'TODO Set these values randomly as well
+        txtState = GetRandomState(rstStates)
+        txtCity = GetRandomCity(stateFull)
+        txtZip = GetRandomZip()
+
+        txtEmail = Left(txtName, 4) & "@gmail.com"
+        txtPhone = GetRandomPhone()
+
+        'Saves the Cucstomer to the list
+        DoCmd.RunCommand acCmdSaveRecord
+    Next i
+
+End Sub
+
+Private Sub btnEdit_Click()
+    Me.AllowEdits = True
+    Me.AllowDeletions = True
+    Me.btnClose.SetFocus
+    btnEdit.Visible = False
+    btnSave.Visible = True
+    lblMode.Caption = "Editing"
+
+End Sub
+
 Private Sub btnSave_Click()
-    DoCmd.Save
+    DoCmd.RunCommand acCmdSaveRecord
+    Me.AllowEdits = False
+    Me.AllowDeletions = False
+    Me.btnClose.SetFocus
+    btnEdit.Visible = True
+    btnSave.Visible = False
+    lblMode.Caption = "Viewing"
+
 End Sub
 
 Private Sub btnNew_Click()
     Dim rst As Recordset
 
-    Set rst = Me.Recordset
-    rst.AddNew
+    'Set rst = Me.Recordset
+    'rst.AddNew
+    If IsNull(txtName) And IsNull(txtLName) And IsNull(txtAddress) And IsNull(txtCity) And IsNull(txtEmail) And IsNull(txtPhone) And IsNull(txtState) And IsNull(txtZip) Then
+        MsgBox ("You're already on a new record.")
+    Else
+        DoCmd.RunCommand acCmdRecordsGoToNew
+    End If
+
+
 
 End Sub
 
 Private Sub btnRandom_Click()
     Dim rstNames As Recordset
+    Dim rstStates As Recordset
 
     Set rstNames = CurrentDb.OpenRecordset("tblNames", dbOpenDynaset)
+    Set rstStates = CurrentDb.OpenRecordset("tblStates", dbOpenDynaset)
 
-    txtName = GetRandomName(rstNames) & " " & GetRandomName(rstNames)
+    txtName = GetRandomName(rstNames)
+    txtLName = GetRandomName(rstNames)
     txtAddress = Int(9999 * Rnd) & " " & GetRandomName(rstNames) & " ST"
 
     'TODO Set these values randomly as well
-    txtCity = "ELIZABETH"
-    txtState = "NJ"
-    txtZip = "07208"
+    txtState = GetRandomState(rstStates)
+    txtCity = GetRandomCity(stateFull)
+    txtZip = GetRandomZip()
 
     txtEmail = Left(txtName, 4) & "@gmail.com"
     txtPhone = GetRandomPhone()
@@ -51,13 +112,29 @@ Private Function GetRandomName(rst As Recordset)
     'Set random number
     Randomize
     'Rnd returns number from 0-1, I think
-    rng = Int(9999 * Rnd)
+    rng = Int(9998 * Rnd)
     Debug.Print rng
 
     rst.MoveFirst
     rst.Move rng
 
-    GetRandomName = rst!Name
+    GetRandomName = rst!name
+
+End Function
+
+Private Function GetRandomState(rst As Recordset)
+    Dim rng As Integer
+    'Set random number
+    Randomize
+    'Rnd returns number from 0-1, I think
+    rng = Int(51 * Rnd)
+    Debug.Print rng
+
+    rst.MoveFirst
+    rst.Move rng
+
+    GetRandomState = rst!State
+    stateFull = rst!stateFull
 
 End Function
 
@@ -73,5 +150,49 @@ Private Function GetRandomPhone()
     Next i
 
     GetRandomPhone = Phone
+
+End Function
+
+Private Function GetRandomZip()
+    Dim i As Integer
+    Dim Phone As String
+
+    Zip = ""
+
+    For i = 0 To 4
+        Randomize
+        Zip = Zip & Int(10 * Rnd)
+    Next i
+
+    GetRandomZip = Zip
+
+End Function
+
+Private Function GetRandomCity(State As String)
+    Dim cnt As Integer
+    Dim rstCities As Recordset
+
+    Set rstCities = CurrentDb.OpenRecordset("" & _
+    "SELECT DISTINCT City, State " & _
+    "FROM tblCensus " & _
+    "WHERE State='" & State & "' and City NOT LIKE 'Balance of*';" _
+    , dbOpenDynaset)
+
+    rstCities.MoveLast
+    DoEvents
+    rstCities.MoveFirst
+    cnt = rstCities.RecordCount
+
+    Dim rng As Integer
+    'Set random number
+    Randomize
+    'Rnd returns number from 0-1, I think
+    rng = Int(cnt * Rnd)
+    Debug.Print rng
+
+
+    rstCities.Move rng
+
+    GetRandomCity = rstCities!City
 
 End Function

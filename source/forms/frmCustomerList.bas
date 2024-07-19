@@ -14,8 +14,8 @@ Begin Form
     Width =10560
     DatasheetFontHeight =11
     ItemSuffix =28
-    Right =14685
-    Bottom =11670
+    Right =15510
+    Bottom =11025
     RecSrcDt = Begin
         0x97a234045531e640
     End
@@ -189,19 +189,19 @@ Begin Form
                     OverlapFlags =85
                     IMESentenceMode =3
                     ColumnCount =7
-                    Left =240
+                    Left =60
                     Top =3240
-                    Width =10080
+                    Width =10440
                     Height =2760
                     TabIndex =1
                     Name ="lstMain"
                     RowSourceType ="Table/Query"
                     RowSource ="tblCustomers"
-                    ColumnWidths ="432;;;;360;720"
+                    ColumnWidths ="432;;;;2304;720"
 
-                    LayoutCachedLeft =240
+                    LayoutCachedLeft =60
                     LayoutCachedTop =3240
-                    LayoutCachedWidth =10320
+                    LayoutCachedWidth =10500
                     LayoutCachedHeight =6000
                 End
                 Begin TextBox
@@ -300,7 +300,8 @@ Begin Form
                     Width =2280
                     Height =315
                     TabIndex =4
-                    Name ="txtFirstName"
+                    Name ="txtCustomerName"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =1260
                     LayoutCachedTop =1680
@@ -308,7 +309,7 @@ Begin Form
                     LayoutCachedHeight =1995
                     Begin
                         Begin Label
-                            OverlapFlags =85
+                            OverlapFlags =93
                             TextFontFamily =18
                             Left =120
                             Top =1695
@@ -336,7 +337,8 @@ Begin Form
                     Width =2760
                     Height =315
                     TabIndex =5
-                    Name ="txtLastName"
+                    Name ="txtCustomerLName"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =4920
                     LayoutCachedTop =1680
@@ -367,22 +369,23 @@ Begin Form
                 Begin TextBox
                     OverlapFlags =85
                     IMESentenceMode =3
-                    Left =1260
-                    Top =2580
+                    Left =1320
+                    Top =2595
                     Height =315
                     TabIndex =6
                     Name ="txtCity"
+                    AfterUpdate ="[Event Procedure]"
 
-                    LayoutCachedLeft =1260
-                    LayoutCachedTop =2580
-                    LayoutCachedWidth =2700
-                    LayoutCachedHeight =2895
+                    LayoutCachedLeft =1320
+                    LayoutCachedTop =2595
+                    LayoutCachedWidth =2760
+                    LayoutCachedHeight =2910
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =18
-                            Left =240
-                            Top =2565
+                            Left =300
+                            Top =2580
                             Width =1005
                             Height =315
                             FontSize =12
@@ -390,10 +393,10 @@ Begin Form
                             Name ="Label23"
                             Caption ="City"
                             FontName ="Times New Roman"
-                            LayoutCachedLeft =240
-                            LayoutCachedTop =2565
-                            LayoutCachedWidth =1245
-                            LayoutCachedHeight =2880
+                            LayoutCachedLeft =300
+                            LayoutCachedTop =2580
+                            LayoutCachedWidth =1305
+                            LayoutCachedHeight =2895
                             ThemeFontIndex =-1
                             ForeTint =100.0
                         End
@@ -407,6 +410,7 @@ Begin Form
                     Height =315
                     TabIndex =7
                     Name ="txtState"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =4140
                     LayoutCachedTop =2580
@@ -435,7 +439,7 @@ Begin Form
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =93
+                    OverlapFlags =85
                     IMESentenceMode =3
                     Left =1260
                     Top =2160
@@ -443,6 +447,7 @@ Begin Form
                     Height =315
                     TabIndex =8
                     Name ="txtAddress"
+                    AfterUpdate ="[Event Procedure]"
 
                     LayoutCachedLeft =1260
                     LayoutCachedTop =2160
@@ -450,7 +455,7 @@ Begin Form
                     LayoutCachedHeight =2475
                     Begin
                         Begin Label
-                            OverlapFlags =93
+                            OverlapFlags =85
                             TextFontFamily =18
                             Left =240
                             Top =2160

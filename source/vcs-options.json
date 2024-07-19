@@ -42,7 +42,19 @@
     "SanitizeLevel": 2,
     "ExtractThemeFiles": false,
     "TablesToExportData": {
+      "tblCensus": {
+        "Format": "Tab Delimited"
+      },
+      "tblCustomers": {
+        "Format": "Tab Delimited"
+      },
       "tblNames": {
+        "Format": "Tab Delimited"
+      },
+      "tblStates": {
+        "Format": "Tab Delimited"
+      },
+      "tblTransactions": {
         "Format": "Tab Delimited"
       },
       "USysRegInfo": {
