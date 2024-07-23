@@ -40,12 +40,6 @@ Begin
         dbInteger "ColumnWidth" ="3180"
         dbBoolean "ColumnHidden" ="0"
     End
-    Begin
-        dbText "Name" ="City"
-    End
-    Begin
-        dbText "Name" ="State"
-    End
 End
 Begin
     State =0

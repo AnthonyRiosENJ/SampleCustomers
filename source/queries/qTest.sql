@@ -1,19 +1,5 @@
 ﻿SELECT
-  RowNumber(
-    CStr([City]),
-    CStr([State])
-  ) AS RowID,
+  q1State.*,
   *
 FROM
-  qryStateCity
-WHERE
-  (
-    (
-      (
-        RowNumber(
-          CStr([City]),
-          CStr([State])
-        )
-      )<> RowNumber("", "", True)
-    )
-  );
+  q1State;

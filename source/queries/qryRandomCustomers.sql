@@ -21,15 +21,8 @@ SELECT
     )
   ) AS Expr3,
   DLookUp(
-    "City",
-    "qTest",
-    "RowID=" & Int(
-      Rnd([Num])* DLookUp(
-        "CountOfField", "qryCitiesCount",
-        "State=" & [State]
-      )
-    )
-  ) AS Expr1,
+    "City", "tblCensus", "State='" & [tblTempCustomers].[State] & "'"
+  ) AS Expr4,
   tblTempCustomers.State,
   Mid(
     Int(

@@ -11,7 +11,7 @@ Begin Form
     Width =3060
     DatasheetFontHeight =11
     ItemSuffix =9
-    Right =15975
+    Right =15450
     Bottom =11025
     RecSrcDt = Begin
         0x3c8d8d56d333e640
@@ -116,7 +116,6 @@ Begin Form
                     LayoutCachedTop =720
                     LayoutCachedWidth =1590
                     LayoutCachedHeight =1125
-                    Overlaps =1
                 End
                 Begin CheckBox
                     OverlapFlags =85
