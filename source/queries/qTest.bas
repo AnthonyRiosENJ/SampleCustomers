@@ -1,10 +1,12 @@
 ﻿Operation =1
 Option =1
+Where ="(((RowNumber(CStr([City]),CStr([State])))<>RowNumber(\"\",\"\",True)))"
 Begin InputTables
-    Name ="q1State"
+    Name ="qryStateCity"
 End
 Begin OutputColumns
-    Expression ="q1State.*"
+    Alias ="RowID"
+    Expression ="RowNumber(CStr([City]),CStr([State]))"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -21,23 +23,11 @@ Begin
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="qryStateCity.City"
+        dbText "Name" ="qryStateCity.tblCensus.State"
         dbLong "AggregateType" ="-1"
     End
     Begin
-        dbText "Name" ="qryStateCity.State"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="RandomRowID"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="q1State.qryStateCity.tblCensus.City"
-        dbLong "AggregateType" ="-1"
-    End
-    Begin
-        dbText "Name" ="q1State.qryStateCity.tblCensus.State"
+        dbText "Name" ="qryStateCity.tblCensus.City"
         dbLong "AggregateType" ="-1"
     End
 End
@@ -45,22 +35,22 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1030
+    Right =1065
     Bottom =752
     Left =-1
     Top =-1
-    Right =744
-    Bottom =456
+    Right =1049
+    Bottom =422
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =246
-        Top =65
-        Right =390
-        Bottom =209
+        Left =48
+        Top =12
+        Right =192
+        Bottom =156
         Top =0
-        Name ="q1State"
+        Name ="qryStateCity"
         Name =""
     End
 End

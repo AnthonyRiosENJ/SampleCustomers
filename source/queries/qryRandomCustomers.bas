@@ -3,8 +3,8 @@ Name ="tblCustomers"
 Option =16
 RowCount ="5"
 Begin InputTables
-    Name ="tblNumbers"
     Name ="tblTempCustomers"
+    Name ="tblNumbers"
 End
 Begin OutputColumns
     Name ="CustomerName"
@@ -16,9 +16,10 @@ Begin OutputColumns
     Expression ="Int(Rnd([Num])*999) & \" \" & DLookUp(\"Name\",\"tblNames\",\"NameNum=\" & Int(R"
         "nd([Num])*9999)) & \" \" & DLookUp(\"Type\",\"tblRoadTypes\",\"RoadNum=\" & Int("
         "Rnd([Num])*11))"
-    Alias ="Expr4"
+    Alias ="Expr1"
     Name ="City"
-    Expression ="DLookUp(\"City\",\"tblCensus\",\"State='\" & [tblTempCustomers].[State] & \"'\")"
+    Expression ="DLookUp(\"City\",\"qTest\",\"RowID=\" & Int(Rnd([Num])*DLookUp(\"CountOfField\","
+        "\"qryCitiesCount\",\"State=\" & [State])))"
     Name ="State"
     Expression ="tblTempCustomers.State"
     Alias ="Expr6"
@@ -103,24 +104,15 @@ Begin
     State =0
     Left =0
     Top =0
-    Right =1030
+    Right =1065
     Bottom =752
     Left =-1
     Top =-1
-    Right =1014
-    Bottom =269
+    Right =1049
+    Bottom =150
     Left =0
     Top =0
     ColumnsShown =651
-    Begin
-        Left =311
-        Top =89
-        Right =455
-        Bottom =233
-        Top =0
-        Name ="tblNumbers"
-        Name =""
-    End
     Begin
         Left =126
         Top =89
@@ -128,6 +120,15 @@ Begin
         Bottom =233
         Top =0
         Name ="tblTempCustomers"
+        Name =""
+    End
+    Begin
+        Left =311
+        Top =89
+        Right =455
+        Bottom =233
+        Top =0
+        Name ="tblNumbers"
         Name =""
     End
 End

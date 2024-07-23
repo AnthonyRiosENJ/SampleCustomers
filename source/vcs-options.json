@@ -51,10 +51,10 @@
       "tblNames": {
         "Format": "Tab Delimited"
       },
-      "tblStates": {
+      "tblNumbers": {
         "Format": "Tab Delimited"
       },
-      "tblTransactions": {
+      "tblStates": {
         "Format": "Tab Delimited"
       },
       "USysRegInfo": {
