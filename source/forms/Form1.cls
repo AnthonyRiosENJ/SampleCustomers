@@ -5,6 +5,8 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub btnGo_Click()
-    RowNumber vbNullString, False, True
+On Error GoTo j
+    RowNumber vbNullString, True
     Debug.Print "Hello"
+j:
 End Sub
